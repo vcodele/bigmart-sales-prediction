@@ -37,8 +37,35 @@ Using machine learning to predict sales can be a benefit and an advancement to s
 # Methods and hypothesis
 The key to analytics is data. Sales data were gathered from Big Mart, which is a Grocery Super Market Brand. The data was taken from Kaggle.
 
-### Data understanding and cleaning
+### 1. Data understanding and cleaning
 Here we loaded the data as a pandas DataFrame, understood the data and handled some missing values. We also identified features that are categorical and those that are numerical.
 
-### EDA
+### 2. EDA
 Here we understood the data from a statistical look. Another thing we did was to correlate the columns with our target column and understood the relationship between the more correlated columns. We also did categorical data transformation where we converted the categorical columns to numerical using LabelEncoder(). We generated the below images from the visualization:
+
+![img1](media/img1.jpg)
+Above is a normal distribution with 12.5 being the medium value. There is a bit of bias towards the 12.5 since it is the value we used in filling the missing values, hence, it's also the highest occuring value.
+
+![img2](media/img2.jpg)
+In img 2, the visibility value ranges between 0.0 - 0.3, with 0.15 being the median. The viisbility value of most of the items lie between 0.03 - 0.05. We can also notice that the data is skewed.
+
+![img3](media/img3.jpg)
+We can visualize the features that are strongly correlated with our target variable. They are Item_Weight, Item_type, Item_Fat_Content, Outlet_Establishment_Year, Outlet_Location_Type
+
+![img4](media/img4.jpg)
+![img5](media/img5.jpg)
+![img6](media/img6.jpg)
+![img7](media/img7.jpg)
+![img8](media/img8.jpg)
+From the related visualizations above:
+- Products whose weight are 12.5 tend to have high sales
+- Starchy food and Seafood sold the most
+- Regular Fat content sold the most
+- The best sale was in 1985, Business was very bad in 1998
+- Location type Tier 2 buys a lot.
+
+### 3. Build ML models to predict sales
+Here we build our machine learning models using some common regression algorithms: DecisionTreeRegressor() and LinearRegression()
+
+### 4. Evaluating the models
+We evaluated the r2_score of the models with our DecisionTreeRegressor() given us 0.5732704288038205 and LinearRegression() gave us 0.4862438042517587.
